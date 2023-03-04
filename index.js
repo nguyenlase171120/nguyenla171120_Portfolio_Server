@@ -12,8 +12,12 @@ dotenv.config();
 
 app.use("/", router);
 
-mongoose.connect(process.env.MONGOOSE_URL).then(() => {
-  app.listen(5000, () => {
-    console.log("🚀 Server is running at http://localhost:5000");
+mongoose
+  .connect(
+    "mongodb+srv://nguyenla171120:eQNuRU9MeUg4DBuj@cluster0.knfgo6k.mongodb.net/portfolio_management?retryWrites=true&w=majority"
+  )
+  .then(() => {
+    app.listen(5000, () => {
+      console.log("🚀 Server is running at http://localhost:5000");
+    });
   });
-});
